@@ -3,12 +3,10 @@
     text-align: center;
     margin-bottom: 10px;
   }
+
   form {
     display: grid;
-    min-width: 400px;
     text-align: center;
-    width: 50%;
-    max-width: 600px;
     margin: 0 auto;
 
     input,
@@ -20,13 +18,16 @@
       resize: none;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
+
     textarea {
       height: 80px;
     }
+
     p {
       font-size: 0.8rem;
       color: red;
     }
+
     input[type="submit"] {
       width: 200px;
       margin-left: auto;
