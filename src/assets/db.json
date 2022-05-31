@@ -16,25 +16,15 @@
       "author": "Mark Zuckerberg",
       "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum a, ullam delectus ad sit. Odit quis adipisci illo sit porro recusandae? Sequi, dolorum repellendus doloremque qui tempora beatae.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum a, ullam delectus ad sit. ",
       "date": 1621536056135,
+      "updatedDate": 1653984653143,
       "id": 3
     },
     {
-      "author": "test",
-      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum a, ullam delectus ad sit. Odit quis adipisci illo sit porro recusandae? Sequi, dolorum repellendus doloremque qui tempora beatae.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum a, ullam delectus ad sit.",
-      "date": 1653948788915,
+      "author": "Llyllyra",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam at atque aut dolorem ea earum, illum ipsum iste\n    itaque laborum laudantium maxime modi nam nisi officia quaerat, quas tenetur veniam vitae! Animi assumenda eveniet,\n    facilis inventore ipsum laboriosam, magni minima minus natus quis quisquam quo vel veniam voluptate voluptatum!",
+      "date": 1653984717091,
+      "updatedDate": 1653984892569,
       "id": 4
-    },
-    {
-      "author": "test",
-      "content": "\"http://localhost:3004/articles\", {\n                author: \"test\",\n                content,\n                date: Date.now(),\n            }",
-      "date": 1653948906349,
-      "id": 5
-    },
-    {
-      "author": "test",
-      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente doloribus vel sunt laborum eos enim odit maxime corporis vero nihil voluptatum a, ullam delectus ad sit. Odit quis adipisci illo sit porro recusandae? Sequi, dolorum repellendus doloremque qui tempora beatae.",
-      "date": 1653948936269,
-      "id": 6
     }
   ]
 }

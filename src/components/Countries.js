@@ -19,6 +19,7 @@ const Countries = () => {
         <div className="countries">
             <ul className="radio-container">
                 <input
+                    key={"ranges"}
                     type="range"
                     min="1"
                     max="250"
@@ -30,6 +31,7 @@ const Countries = () => {
                         <input
                             type="radio"
                             id={continent}
+                            key={continent}
                             name="continentRadio"
                             checked={continent === selectedRadio}
                             onChange={(e) => setSelectedRadio(e.target.id)}
@@ -49,8 +51,8 @@ const Countries = () => {
                     .filter((country) => country.continents[0].includes(selectedRadio))
                     .sort((a, b) => b.population - a.population)
                     .slice(0, rangeValue)
-                    .map((country, index) => (
-                        <li className="card" key={index}>
+                    .map((country, number) => (
+                        <li className="card" key={number.toString()}>
                             <Card country={country}/>
                         </li>
                     ))}

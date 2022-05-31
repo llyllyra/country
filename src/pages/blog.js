@@ -1,56 +1,74 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import Logo from "../components/Logo";
 import Navigation from "../components/Navigation";
 import axios from "axios";
-import Articles from "../components/Articles";
+import Article from "../components/Article";
 
 const Blog = () => {
-    const [blogData, setBlogData] = useState([])
+    const [blogData, setBlogData] = useState([]);
+    const [author, setAuthor] = useState("");
     const [content, setContent] = useState("");
-    let [error, setError] = useState(false)
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (content.length < 70) {
-            setError(true);
-        } else {
-            axios.post("http://localhost:3004/articles", {
-                author: "test",
-                content,
-                date: Date.now(),
-            })
-            setError(false);
-        }
-    }
+    const [error, setError] = useState(false);
+
     const getData = () => {
         axios
             .get("http://localhost:3004/articles")
-            .then((res) => setBlogData(res.data))
+            .then((res) => setBlogData(res.data));
     };
+
     useEffect(() => getData(), []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (content.length < 50) {
+            setError(true);
+        } else {
+            await axios.post("http://localhost:3004/articles", {
+                author,
+                content,
+                date: Date.now(),
+            });
+            setError(false);
+            setAuthor("");
+            setContent("");
+            await getData();
+        }
+    };
 
     return (
         <div className="blog-container">
             <Logo/>
             <Navigation/>
             <h1>Blog</h1>
+
             <form onSubmit={(e) => handleSubmit(e)}>
-                <input type="text" placeholder="Nom"/>
+                <input
+                    type="text"
+                    placeholder="Nom"
+                    onChange={(e) => setAuthor(e.target.value)}
+                    value={author}
+                />
                 <textarea
-                    style={{border: error ? "5px solid red" : "1px solid #61dafb"}}
-                    placeholder="Votre message"
-                    onChange={(e) => setContent(e.target.value)}></textarea>
-                {error && <p>Veuillez écrire un minimum de 140 caractères</p>}
+                    style={{border: error ? "1px solid red" : "1px solid #61dafb"}}
+                    placeholder="Message"
+                    onChange={(e) => setContent(e.target.value)}
+                    value={content}
+                ></textarea>
+                {error && <p>Veuillez écrire un minimum de 50 caractères</p>}
                 <input type="submit" value="Envoyer"/>
             </form>
-            {/*article*/}
             <ul>
                 {blogData
                     .sort((a, b) => b.date - a.date)
-                    .map((articles) => (
-                        <Articles key={articles.id} articles={articles}/>
+                    .map((article) => (
+                        <Article key={article.id} article={article}/>
                     ))}
             </ul>
         </div>
     );
-}
+};
+
 export default Blog;
+
+<p></p>
