@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
-import Logo from "../components/Logo";
+
 import Navigation from "../components/Navigation";
 import axios from "axios";
 import Article from "../components/Article";
+import Logo from "../components/Logo";
 
 const Blog = () => {
     const [blogData, setBlogData] = useState([]);
@@ -38,7 +39,7 @@ const Blog = () => {
 
     return (
         <div className="blog-container">
-            <Logo/>
+            <Logo />
             <Navigation/>
             <h1>Blog</h1>
 
